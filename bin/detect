@@ -1,4 +1,8 @@
 #! /bin/bash
 
-# this buildpack can always be used
-exit 0
+# Skip if SKIP_IMAGEMAGICK is set
+if [[ -z "$SKIP_IMAGEMAGICK" ]]; then
+  exit 0
+else
+  exit 1
+fi
